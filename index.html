@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PartStop - Your One Stop for Computer Parts</title>
+    <style>
+        /* Add your CSS styles here */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-direction: row; /* Change from column to row */
+            align-items: center; /* Optional: Center items vertically */
+            height: 80vh; /* Adjust this value as needed */
+        }
+
+        .main-content button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .main-content img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">PartStop</div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <button>
+            <img src="cpu.jpg" alt="CPU">
+            <span>CPU</span>
+        </button>
+        <button>
+            <img src="gpu.jpg" alt="GPU">
+            <span>GPU</span>
+        </button>
+        <button>
+            <img src="ram.jpg" alt="RAM">
+            <span>RAM</span>
+        </button>
+        <button>
+            <img src="psu.jpg" alt="PSU">
+            <span>PSU</span>
+        </button>
+        <button>
+            <img src="motherboard.jpg" alt="Motherboard">
+            <span>Motherboard</span>
+        </button>
+    </div>
+
+    <!-- Rest of your website content goes here -->
+</body>
+</html>
