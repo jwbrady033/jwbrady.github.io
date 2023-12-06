@@ -1,3 +1,32 @@
+<?php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'dataForm');
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+
+
+if($conn->connect_error) {
+die('Connection Failed ' . $conn->connect_error);
+}
+
+
+if($_SERVER['REQUEST_MODE'] == 'POST')
+{
+$fname = $_POST["input1"];
+$lname = $_POST["input2"];
+$email = $_POST["input3"];
+$sub = $_POST["input4"];
+$query = $conn->prepare("INSERT INTO user_inquiries (FirstName,LastName,EmailAddress,Subjects)
+VALUES (?,?,?,?)");
+$query->bind_param('ssss', $fname, $lname, $email, $sub);
+$query->execute();
+$conn->close();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,28 +51,20 @@
         <h1>Contact Us</h1>
         <p>We'd love to hear from you! Please fill out the form below.</p>
 
-        <form action="#" method="post">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required>
-
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="source">What brought you to the site?</label>
-            <select id="source" name="source">
-                <option value="search">Search Engine</option>
-                <option value="social">Social Media</option>
-                <option value="recommendation">Recommendation</option>
-                <option value="other">Other</option>
-            </select>
-
-            <button type="submit">Submit</button>
+        <form id="form1" method="POST">
+           <h1>Contact Us</h1>
+            <h5>First Name</h5>
+            <input name="input1" placeholder="First Name..." style="border-radius: 3px;">
+            <h5>Last Name</h5>
+            <input name="input2" placeholder="Last Name..." style="border-radius: 3px;">
+            <h5>Email Address</h5>
+            <input name="input3" placeholder="Email Address..." style="border-radius: 3px;">
+            <h5>Subject</h5>
+            <textarea name="input4" placeholder="Subject..." style="border-radius: 3px;" rows="5"
+            cols="30"></textarea>
+            <br>
+            <button name="button1" type="submit" style="width: 100px; height: 20px; margin-top:
+            1rem;">Submit</button>
         </form>
     </div>
 
