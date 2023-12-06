@@ -76,6 +76,14 @@ main {
     text-align: center;
 }
 
+.share-button-container {
+    background-color: #afdaff; /* Light blue background color */
+    display: inline-block; /* Display as inline-block to wrap around content */
+    padding: 10px; /* Add padding for better visual */
+    border: 2px solid #afdaff; /* Add border around the container */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+}
+
 #twittershare {
     color: white; /* Text color for better contrast */
     text-decoration: none;
