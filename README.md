@@ -1,1 +1,0 @@
-# jwbrady.github.io
