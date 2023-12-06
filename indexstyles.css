@@ -69,8 +69,20 @@ main {
     background-color: #333; /* Grey background color */
     color: white; /* Text color */
     padding: 20px;
+    text-align: center; /* Center-align text in the footer */
 }
 
 .footer-content {
     text-align: center;
+}
+
+.share-button-container {
+    background-color: #afdaff; /* Light blue background color */
+    display: inline-block; /* Display as inline-block to wrap around content */
+    padding: 10px; /* Add padding for better visual */
+}
+
+#twittershare {
+    color: white; /* Text color for better contrast */
+    text-decoration: none;
 }
